@@ -1,0 +1,61 @@
+public class 测量温度 {
+    public 测量温度() {
+    }
+
+    public static void main(String[] args) throws ParseException {
+        List<Temperature> temperatureList = new ArrayList();
+        List<Light> lightList = new ArrayList();
+        ArrayList moistureList = new ArrayList();
+
+        while(true) {
+            System.out.println("检测温度");
+        }
+
+    }
+    public static void detectTemperature(List<Temperature> temperatureList) throws ParseException {
+        Temperature t = new Temperature();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date begin = dateFormat.parse("2022-01-01");
+        Date end = dateFormat.parse("2022-12-31");
+        Boolean result = getDate(begin, end);
+        Scanner sc;
+        double temp;
+        if (result) {
+            sc = new Scanner(System.in);
+            System.out.println("请输入当前温度：");
+            temp = sc.nextDouble();
+            t.setTemperature(temp);
+            temperatureList.add(t);
+            if (t.getTemperature() > 30.0D) {
+                System.out.println("启动降温");
+            } else if (t.getTemperature() < 20.0D) {
+                System.out.println("关闭降温");
+            } else {
+                System.out.println("当前温度适宜");
+            }
+        } else {
+            sc = new Scanner(System.in);
+            System.out.println("请输入当前温度：");
+            temp = sc.nextDouble();
+            t.setTemperature(temp);
+            if (t.getTemperature() < 10.0D) {
+                System.out.println("启动增温");
+            } else if (t.getTemperature() > 13.0D) {
+                System.out.println("关闭增温");
+            } else {
+                System.out.println("当前温度适宜");
+            }
+        else {
+                sc = new Scanner(System.in);
+                System.out.println("请输入当前温度：");
+                temp = sc.nextDouble();
+                t.setTemperature(temp);
+                if (t.getTemperature() >= 10.0D<=30.0D) {
+                    System.out.println("不启动增温降温");
+              
+        }
+
+    } 
+}
+    } 
+}
